@@ -5,8 +5,11 @@
 	# Due Date: 10/10/ 2026
 	# Purpose: This program is a conversion tool between Miles per Gallon into Kilometers per Liter. This tool uses a GUI application which gives a seperate text box for the user to input the value and get the right conversion.
 
+# Import the text box
 import tkinter as tk
 
+
+# Make a function that does the conversion and gives the output texts
 def convert(event = None):
     try:
         mpg = float(event.widget.get())
@@ -15,10 +18,12 @@ def convert(event = None):
     except ValueError:
         final.config(text = "Not good!")
 
+# Labeling the box and editing the size of the box
 space = tk.Tk()
 space.title("MPG to KPL")
 space.geometry("200x200")
 
+# Editing the box in a grid style
 mpg_label = tk.Label(space, text = "MPG is: ")
 mpg_label.grid(row = 0, column = 0)
 
@@ -33,4 +38,5 @@ final.grid(row = 1, column = 1)
 
 mpg_input.bind("<KeyRelease>", convert)
 
+# End
 space.mainloop()
